@@ -6,22 +6,22 @@ define(["module", "knockout", "js/router", "js/sessionRepository"], function(mod
     });
 
     function SessionDetailsViewModel(component, params) {
-    	this.currentSession = ko.observable();
-		this.otherSessions = ko.observableArray();
+        this.currentSession = ko.observable();
+        this.otherSessions = ko.observableArray();
 
-    	// Load the "other sessions" list just once when this component is instantiated
-    	sessionRepository.getAllSessions().then(this.otherSessions);
+        // Load the "other sessions" list just once when this component is instantiated
+        sessionRepository.getAllSessions().then(this.otherSessions);
 
-    	// Load the "current session" whenever the sessionId route parameter changes
-    	var sessionLoader = ko.computed(function () {
-    		this.currentSession(null); // Show "loading" until fetched
-	    	sessionRepository
-	    		.getSession(params.route().sessionId)
-	    		.then(this.currentSession);
-    	}, this);
+        // Load the "current session" whenever the sessionId route parameter changes
+        var sessionLoader = ko.computed(function () {
+            this.currentSession(null); // Show "loading" until fetched
+            sessionRepository
+                .getSession(params.route().sessionId)
+                .then(this.currentSession);
+        }, this);
 
-    	// Stop reacting to URL changes when this component is disposed
-    	component.onDispose(sessionLoader);
+        // Stop reacting to URL changes when this component is disposed
+        component.onDispose(sessionLoader);
     }
 
     return SessionDetailsViewModel;

@@ -1,7 +1,7 @@
 define(["knockout"], function(ko) {
-	// Strictly speaking there's no need for this class, as you could just
-	// work with the JSON data directly. However in most apps it's valuable
-	// to have actual model classes where you can put behaviour.
+    // Strictly speaking there's no need for this class, as you could just
+    // work with the JSON data directly. However in most apps it's valuable
+    // to have actual model classes where you can put behaviour.
 
     function Session(data) {
         this.id = data.id;

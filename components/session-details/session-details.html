@@ -1,12 +1,12 @@
 <!-- ko ifnot: currentSession -->
-	<p>Loading...</p>
+    <p>Loading...</p>
 <!-- /ko -->
 <!-- ko with: currentSession -->
-	<h2 data-bind="text: title"></h2>
-	<h3 data-bind="text: speaker"></h3>
-	<p data-bind="text: description" style="white-space: pre-wrap"></p>
+    <h2 data-bind="text: title"></h2>
+    <h3 data-bind="text: speaker"></h3>
+    <p data-bind="text: description" style="white-space: pre-wrap"></p>
 <!-- /ko -->
 <!-- ko if: currentSession -->
-	<hr />
-	<other-sessions sessions="{{ otherSessions }}" exclude="{{ currentSession }}"></other-sessions>
+    <hr />
+    <other-sessions sessions="{{ otherSessions }}" exclude="{{ currentSession }}"></other-sessions>
 <!-- /ko -->
