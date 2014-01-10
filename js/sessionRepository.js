@@ -2,7 +2,7 @@ define(["knockout", "js/models/session"], function(ko, Session) {
 
     return {
         getAllSessions: function() {
-            return $.getJSON("/server/api/sessions").then(function(array) {
+            return $.getJSON("server/api/sessions").then(function(array) {
                 return ko.utils.arrayMap(array, function (data) { return new Session(data); });
             });
         },
