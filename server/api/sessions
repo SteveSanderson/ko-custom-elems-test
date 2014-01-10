@@ -1,0 +1,20 @@
+[
+   {
+      "id": "beyond-spa",
+      "title": "Beyond single-page apps: Adding a second page",
+      "speaker": "Bartleby Whipplebean Jr.",
+      "description": "In this session, you'll learn how to astound colleagues, friends, and pets alike with a multi-page website.\n\nThanks to emerging web standards, it will soon be possible even to link from one page to another!"
+   },
+   {
+      "id": "supporting-mosaic",
+      "title": "Why you need to support NCSA Mosaic",
+      "speaker": "Mylene Großfepple",
+      "description": "Too many web developers these days think it's good enough just to support IE6. After this talk, you'll be rushing off to implement pixel-perfect rendering on many other important browsers, including NCSA Mosaic and Lynx."
+   },
+   {
+      "id": "breaking-back",
+      "title": "Breaking Back, Series 1",
+      "speaker": "Walter White",
+      "description": "I never meant to become a web developer. I had no choice; it was the only way to support my family.\n\nAt first it seemed like easy money, distilling 97.6% pure JavaScript apps with Knockout.js, working remotely in an old RV. But then they said I had to support the 'back' button.\n\nHey! Nobody supports the 'back button'! It's we're not done until *I* say we're done!\n\nI AM THE DANGER!"
+   }
+]

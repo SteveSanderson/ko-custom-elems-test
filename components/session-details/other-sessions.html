@@ -1,0 +1,6 @@
+<h3>Other sessions you might like</h3>
+<ul data-bind="foreach: sessions">
+	<li data-bind="visible: $data.id !== $parent.exclude().id">
+		<a data-bind="attr: { href: '#sessions/' + id }, text: title"></a>
+	</li>
+</ul>
