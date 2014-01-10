@@ -2,7 +2,7 @@ This demo web app is nothing but static HTML and JavaScript files. However, sinc
 
 Live demo at http://stevesanderson.github.io/ko-custom-elems-test/
 
-# Running it locally
+### Running it locally
 
 If you have Node.js, open a terminal/command prompt in the same directory as this README file, then run:
 
