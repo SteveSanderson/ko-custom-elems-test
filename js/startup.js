@@ -1,6 +1,7 @@
 requirejs.config({
     baseUrl: "",
     paths: {
+        "text": "lib/require.text",
         "jquery": "lib/jquery-1.10.2",
         "knockout": "lib/knockout-3.0.0.debug",
         "knockout-components": "lib/knockout-components",
@@ -22,7 +23,7 @@ define(["jquery", "knockout", "js/router", "lib/knockout-customElements"], funct
     // Defines common URL conventions used by components in this site
     function registerComponent(name) {
         ko.components.register(name, {
-            templateUrl: "components/" + name + "/" + name + ".html",
+            template: { require: "text!/components/" + name + "/" + name + ".html" },
             viewModel: "components/" + name + "/" + name
         });
     }

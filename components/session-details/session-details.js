@@ -2,7 +2,7 @@ define(["module", "knockout", "js/router", "js/sessionRepository"], function(mod
     // Components may register further components of their own
     // This one is just an HTML partial with no viewmodel
     ko.components.register("other-sessions", {
-        templateUrl: ko.components.relativeUrl(module.uri, "other-sessions.html")
+        template: { require: "text!" + ko.components.relativeUrl(module.uri, "other-sessions.html") }
     });
 
     function SessionDetailsViewModel(component, params) {
