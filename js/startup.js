@@ -24,7 +24,7 @@ define(["jquery", "knockout", "js/router", "lib/knockout-customElements"], funct
     function registerComponent(name) {
         ko.components.register(name, {
             template: { require: "text!/components/" + name + "/" + name + ".html" },
-            viewModel: "components/" + name + "/" + name
+            viewModel: { require: "components/" + name + "/" + name }
         });
     }
 });
