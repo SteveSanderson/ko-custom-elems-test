@@ -5,7 +5,7 @@ define(["module", "knockout", "js/sessionRepository"], function(module, ko, sess
         template: { require: "text!" + ko.components.relativeUrl(module.uri, "session-summary.html") }
     });
 
-    function SessionsListViewModel(component, params) {
+    function SessionsListViewModel(params) {
         this.sessions = ko.observableArray();
 
         // Populate the array asynchronously via Ajax

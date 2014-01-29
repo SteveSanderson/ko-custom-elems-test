@@ -5,7 +5,7 @@ define(["module", "knockout", "js/router", "js/sessionRepository"], function(mod
         template: { require: "text!" + ko.components.relativeUrl(module.uri, "other-sessions.html") }
     });
 
-    function SessionDetailsViewModel(component, params) {
+    function SessionDetailsViewModel(params) {
         this.currentSession = ko.observable();
         this.otherSessions = ko.observableArray();
 
@@ -13,15 +13,17 @@ define(["module", "knockout", "js/router", "js/sessionRepository"], function(mod
         sessionRepository.getAllSessions().then(this.otherSessions);
 
         // Load the "current session" whenever the sessionId route parameter changes
-        var sessionLoader = ko.computed(function () {
+        this._sessionLoader = ko.computed(function () {
             this.currentSession(null); // Show "loading" until fetched
             sessionRepository
                 .getSession(params.route().sessionId)
                 .then(this.currentSession);
         }, this);
+    }
 
+    SessionDetailsViewModel.prototype.dispose = function() {
         // Stop reacting to URL changes when this component is disposed
-        component.onDispose(sessionLoader);
+        this._sessionLoader.dispose();
     }
 
     return SessionDetailsViewModel;
