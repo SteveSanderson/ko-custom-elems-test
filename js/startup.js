@@ -23,7 +23,7 @@ define(["jquery", "knockout", "js/router", "lib/knockout-customElements"], funct
     // Defines common URL conventions used by components in this site
     function registerComponent(name) {
         ko.components.register(name, {
-            template: { require: "text!/components/" + name + "/" + name + ".html" },
+            template: { require: "text!components/" + name + "/" + name + ".html" },
             viewModel: { require: "components/" + name + "/" + name }
         });
     }
